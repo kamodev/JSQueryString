@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Query String Test</title>
+
+</head>
+<body>
+    <h1>The Query String test</h1>
+    <a href="index.html?test=123546">Test</a>
+</body>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="../jQuery/QueryString.js"></script>
+<script>
+    console.log("The query parameter exists: " + $.QueryContains('test'));
+    console.log("The query parameter value: " + $.QueryValue('test'));
+</script>
+</html>
