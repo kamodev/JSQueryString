@@ -33,7 +33,7 @@
      * @param {String} qskey The name of the query string parameter
      */
     $.QueryContains = function(qskey) {
-        return ((urlParams[key] !== null) && (urlParams[key] !== undefined));
+        return ((urlParams[qskey] !== null) && (urlParams[qskey] !== undefined));
     };
 
     /**
@@ -41,7 +41,7 @@
      * @param {String} param The name the query string parameter
      */
     $.QueryValue = function(param) {
-      return (((urlParams[key] !== null) && (urlParams[key] !== undefined)) ? urlParams[key] : false);
+      return (((urlParams[param] !== null) && (urlParams[key] !== undefined)) ? urlParams[param] : false);
     };
 
 })(jQuery);
