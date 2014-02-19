@@ -2,10 +2,10 @@
  * The jQuery version of the QueryString object
  * @param  {Object} $ The jQuery object
  */
-(function ($) {
+(function ($, win) {
 
     // Object variables
-    var URL = window.location.href;
+    var URL = win.location.href;
     var urlParams = {};
 
     // Checking for the query string
@@ -32,7 +32,7 @@
      * This function checks to see if there is a query variable in the url
      * @param {String} qskey The name of the query string parameter
      */
-    $.QueryContains = function(qskey) {
+    $.url.contains = function(qskey) {
         return ((urlParams[qskey] !== null) && (urlParams[qskey] !== undefined));
     };
 
@@ -40,8 +40,16 @@
      * Gets the value of the given query string parameter
      * @param {String} param The name the query string parameter
      */
-    $.QueryValue = function(param) {
-      return (((urlParams[param] !== null) && (urlParams[key] !== undefined)) ? urlParams[param] : false);
+    $.url.value = function(param) {
+      return (((urlParams[param] !== null) && (urlParams[param] !== undefined)) ? urlParams[param] : false);
     };
 
-})(jQuery);
+    /**
+     * Checks for the hash tag in the url
+     * @return {Boolean} Returns boolean if the URL has a hashtag
+     */
+    $.url.hasHash = function() {
+      return (true || false);
+    }
+
+})(jQuery, window);
